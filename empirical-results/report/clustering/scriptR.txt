@@ -1,0 +1,543 @@
+#General
+
+#HDD
+library(readxl)
+setwd("byalg")
+LengResultsGlobal <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="General")
+df1 <- LengResultsGlobal[,1]
+View(df1)
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+png("GeneralHDD.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+#GraphicCard
+library(readxl)
+setwd("byalg")
+LengResultsGlobal <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="General")
+df1 <- LengResultsGlobal[,2]
+View(df1)
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+png("GeneralGraphicCard.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+
+#Processor
+library(readxl)
+setwd("byalg")
+LengResultsGlobal <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="General")
+df1 <- LengResultsGlobal[,3]
+View(df1)
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+png("GeneralProcessor.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+#DUT
+library(readxl)
+setwd("byalg")
+LengResultsGlobal <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="General")
+df1 <- LengResultsGlobal[,4]
+View(df1)
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+png("GeneralDUT.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+
+
+#for each algorithm
+
+library(readxl)
+setwd("byalg")
+
+# DUT - Binary
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="DUT")
+
+df1 <- LengResultsAlgorithm[,1]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("BinaryDUT.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+
+# Proc - Binary
+
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="Processor")
+
+df1 <- LengResultsAlgorithm[,1]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("BinaryProc.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+# HDD - Binary
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="HDD")
+
+df1 <- LengResultsAlgorithm[,1]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("BinaryHDD.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+# GraphicCard - Binary
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="GraphCard")
+
+df1 <- LengResultsAlgorithm[,1]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("BinaryGraphic.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+
+## fannkuch-redux
+
+# DUT - fannkuch
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="DUT")
+
+df1 <- LengResultsAlgorithm[,2]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("fannkuchDUT.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+
+# Proc - fannkuch
+
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="Processor")
+
+df1 <- LengResultsAlgorithm[,2]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("fannkuchProc.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+# HDD - fannkuch
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="HDD")
+
+df1 <- LengResultsAlgorithm[,2]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("fannkuchHDD.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+# GraphicCard - fannkuch
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="GraphCard")
+
+df1 <- LengResultsAlgorithm[,2]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("fannkuchGraphic.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+
+## fasta
+
+# DUT - fasta
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="DUT")
+
+df1 <- LengResultsAlgorithm[,3]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("fastaDUT.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+
+# Proc - fasta
+
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="Processor")
+
+df1 <- LengResultsAlgorithm[,3]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("fastaProc.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+# HDD - fasta
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="HDD")
+
+df1 <- LengResultsAlgorithm[,3]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("fastaHDD.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+# GraphicCard - fasta
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="GraphCard")
+
+df1 <- LengResultsAlgorithm[,3]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("fastaGraphic.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+## mandelbrot
+
+# DUT - mandelbrot
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="DUT")
+
+df1 <- LengResultsAlgorithm[,4]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("mandelbrotDUT.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+
+# Proc - mandelbrot
+
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="Processor")
+
+df1 <- LengResultsAlgorithm[,4]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("mandelbrotProc.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+# HDD - mandelbrot
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="HDD")
+
+df1 <- LengResultsAlgorithm[,4]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("mandelbrotHDD.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+# GraphicCard - mandelbrot
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="GraphCard")
+
+df1 <- LengResultsAlgorithm[,4]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("mandelbrotGraphic.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+## nbody
+
+# DUT - nbody
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="DUT")
+
+df1 <- LengResultsAlgorithm[,5]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("nbodyDUT.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+
+# Proc - nbody
+
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="Processor")
+
+df1 <- LengResultsAlgorithm[,5]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("nbodyProc.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+# HDD - nbody
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="HDD")
+
+df1 <- LengResultsAlgorithm[,5]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("nbodyHDD.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+# GraphicCard - nbody
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="GraphCard")
+
+df1 <- LengResultsAlgorithm[,5]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("nbodyGraphic.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+
+## spectral
+
+# DUT - spectral
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="DUT")
+
+df1 <- LengResultsAlgorithm[,6]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("spectralDUT.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+
+# Proc - spectral
+
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="Processor")
+
+df1 <- LengResultsAlgorithm[,6]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("spectralProc.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+# HDD - spectral
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="HDD")
+
+df1 <- LengResultsAlgorithm[,6]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("spectralHDD.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+
+# GraphicCard - spectral
+LengResultsAlgorithm  <- read_excel("ClustersByLanguageAlgorithm.xlsx", sheet="GraphCard")
+
+df1 <- LengResultsAlgorithm[,6]
+rownames(df1) <- c("Ada", "C++", "C",  "Dart", "Erlang", "Haskell", "Java", "JavaScript", "Jruby", "Pascal", "Perl", "PHP", "Python", "Ruby")
+View(df1)
+# Ward Hierarchical Clustering
+d <- dist(df1, method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward")
+
+png("spectralGraphic.png", pointsize=10, width=1400, height=960, res=300)
+plot(fit) # display dendogram
+groups <- cutree(fit, k=5) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters
+rect.hclust(fit, k=5, border="red")
+# Close the graphics device
+dev.off()
+

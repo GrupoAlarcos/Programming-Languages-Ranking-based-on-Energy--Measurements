@@ -1,0 +1,20 @@
+{
+
+	"project":"LPs",
+	"versions":["C++"],
+	"testcases":["binary-trees","fannkuch-redux","fasta","mandelbrot","n-body","spectral-norm"],
+	"measurements":"30",
+	"executions":"10",
+	"compile":"true",
+	
+	"initialDelay":"1064.0",
+	"finalDelay":"1588.0",
+	
+	"time":"true",
+	"hdd":"true",
+	"graphicsCard":"true",
+	"process":"true",
+	"monitor":"false",
+	"dut":"true"
+
+}
